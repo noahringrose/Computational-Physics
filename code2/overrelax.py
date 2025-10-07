@@ -10,6 +10,7 @@ f = lambda x: 1.0 - np.exp(-c * x)
 tol = 1e-6
 maxiter = 10000
 
+# simple iterative convergence test
 def fixed_point_simple(x0, tol=1e-6, maxiter=10000):
     x = x0
     seq = [x]
@@ -21,6 +22,7 @@ def fixed_point_simple(x0, tol=1e-6, maxiter=10000):
         x = x_new
     return x, maxiter, np.array(seq)
 
+#over-relaxed iterative convergence test
 def fixed_point_overrelax(x0, omega, tol=1e-6, maxiter=10000):
     x = x0
     seq = [x]
