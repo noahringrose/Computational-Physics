@@ -1,20 +1,19 @@
-# Computational Physics Homework 1
+# Computational Physics Homework 2
 
-This repository contains my solutions to Homework 1 of Computational Physics.
+This repository contains my solutions to Homework 2 of Computational Physics. These can be found in the folder titled 'code2'
 
 ## Contents
 
-- `code/`
-  - `NumericalDerivativePS1.py`: Computes numerical derivatives of `cos(x)` and `exp(x)` using forward, central, and Richardson methods.
-  - `NumericalIntegralsPS1.py`: Implements midpoint, trapezoid, and Simpson’s rule to evaluate integrals and compare errors.
-  - `PowerSpectrumPS1.py`: Computes the two-point correlation function ξ(r) from the tabulated matter power spectrum P(k) and identifies the BAO peak.
+- `code2/`
+  - `overrelax.py`: Explores the use of over-relaxation techniques for speeding up the convergence of simple iterative functions.
+  - 'wien.py`: Utilizes binary search to find the root of a simple equation in order to find Wien's Displacement Constant.
+  - `graddescent.py`: Implements gradient descent algorithm in order to minimze chi squared fit of Schechter Function to COSMOS SMF data.
+    
+- 'data2/' contains two csv files which display iteration history from the algorithms in 'overrelax.py' and 'graddescent.py'
 
-- `data/`
-  - `lcdm_z0.matter_pk`: Input data file containing tabulated P(k).
+- 'smf_cosmos.dat' is simply the data provided for Problem 3.
 
-- `figures/`
-  - Error plots for derivative and integration problems.
-  - BAO correlation function plot.
+- 'plots2/' contains all of the generated plots in my write-up.
 
 ## How to Run
 
