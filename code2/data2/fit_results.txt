@@ -1,0 +1,7 @@
+Best-fit Schechter parameters:
+log10(phi*) = -2.568216
+log10(M*)   = 10.976227
+alpha       = -1.009390
+phi* = 2.7026e-03
+M*  = 9.4673e+10
+chi^2 = 2.908056
