@@ -1,4 +1,4 @@
-##Computational Physics Homework 3
+## Computational Physics Homework 3
 This repository contains my solutions to Homework 3 of Computational Physics. These can be found in the folder titled 'homework3'
 ## Contents
 'homework3/'
