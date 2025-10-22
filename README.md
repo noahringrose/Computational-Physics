@@ -1,24 +1,9 @@
-# Computational Physics Homework 2
-
-This repository contains my solutions to Homework 2 of Computational Physics. These can be found in the folder titled 'code2'
-
+##Computational Physics Homework 3
+This repository contains my solutions to Homework 3 of Computational Physics. These can be found in the folder titled 'homework3'
 ## Contents
-
-- `code2/`
-  - `overrelax.py`: Explores the use of over-relaxation techniques for speeding up the convergence of simple iterative functions.
-  - 'wien.py`: Utilizes binary search to find the root of a simple equation in order to find Wien's Displacement Constant.
-  - `graddescent.py`: Implements gradient descent algorithm in order to minimze chi squared fit of Schechter Function to COSMOS SMF data.
-    
-- 'data2/' contains two csv files which display iteration history from the algorithms in 'overrelax.py' and 'graddescent.py'
-
-- 'smf_cosmos.dat' is simply the data provided for Problem 3.
-
-- 'plots2/' contains all of the generated plots in my write-up.
-
-## How to Run
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/noahringrose/Computational-Physics.git
-   cd Computational-Physics/code
-
+'homework3/'
+- 'sunspots_periodicity.py': Detects periodicity in monthly sunspot numbers using a discrete Fourier transform on 'sunspots.txt'. The dominant frequency corresponds to the 11-year solar cycle.
+- 'dow_filtering.py': Performs Fourier filtering and smoothing on 'dow.txt', the Dow Jones Industrial Average data. Generates smoothed signals by keeping only the lowest 10% and 2% of Fourier modes.
+- 'deconvolution_2d.py': Implements 2D image deconvolution of a blurred grayscale image ('blur.txt') using Fourier transforms and a Gaussian point spread function with σ = 25 and ε = 10⁻³.
+-'sunspots.txt', 'dow.txt', and 'blur.txt' are the data files provided for each problem.
+- the .png files are all of the generated images and plots.
