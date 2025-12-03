@@ -1,8 +1,7 @@
-## Computational Physics Homework 4
-This repository contains my solutions to Homework 4 of Computational Physics. These can be found in the folder titled 'homework4'
+## Computational Physics Homework 5
+This repository contains my solutions to Homework 5 of Computational Physics. These can be found in the folder titled 'homework5'
 ## Contents
 'homework4/'
-- 'chemical.py': Problem 1; solves Brusselator for a=1, b=3 using Bulirsch–Stoer method.
-- 'bh2.py': Problem 2: Blackholes and such
-- 'out' folder: All images and csv results for bh2.py
-- the remaining .png and .csv files not in the 'out' folder correspond to problem 1.
+- 'schrodinger_cn.py': Problem 1: Solves Schrodinger Equation in a given potential using Crank-Nicolson method
+- 'potential.py': Problem 2: Elctric potential problem
+- all .png files correspond to problem 2.
