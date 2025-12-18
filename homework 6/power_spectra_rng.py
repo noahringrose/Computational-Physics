@@ -31,9 +31,8 @@ class LCG:
 # (b) Gaussian generator 
     
 def gaussian_box_muller(lcg: LCG, n: int):
-    """
-    Generate n iid N(0,1) values using Box–Muller from LCG uniforms.
-    """
+    #Generate n iid N(0,1) values using Box–Muller from LCG uniforms.
+
     out = np.empty(n, dtype=np.float64)
     i = 0
     while i < n:
@@ -64,16 +63,13 @@ def power_spectrum(x):
     x = np.asarray(x, dtype=np.float64)
     N = x.size
     Xk = np.fft.rfft(x)
-    Pk = (np.abs(Xk)**2) / (N**2)  # consistent normalization for comparisons
-    k = np.arange(Pk.size)         # integer wavenumber index
+    Pk = (np.abs(Xk)**2) / (N**2)  
+    k = np.arange(Pk.size)         
     return k, Pk
 
 
 def fit_loglog_slope(k, Pk, kmin=1, kmax=None):
-    """
-    Fit slope of log P vs log k over k in [kmin, kmax].
-    Returns slope, intercept. Excludes any nonpositive entries.
-    """
+    # Fit slope of log P vs log k over k in [kmin, kmax].
     if kmax is None:
         kmax = k[-1]
 
