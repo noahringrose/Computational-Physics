@@ -1,8 +1,8 @@
-## Computational Physics Homework 5
-This repository contains my solutions to Homework 5 of Computational Physics. These can be found in the folder titled 'homework5'
+## Computational Physics Homework 6
+This repository contains my solutions to Homework 6 of Computational Physics. These can be found in the folder titled 'homework6'
 ## Contents
-'homework5/'
-- 'schrodinger_cn.py': Problem 1: Solves Schrodinger Equation in a given potential using Crank-Nicolson method
-- 'potential.py': Problem 2: Elctric potential problem
-- I could not save the animation to my Macbook, but you can run the code yourself if you want to see it. I have included pictures 3 timesteps of the animation in the LaTeX writeup.
-- all .png files correspond to problem 2.
+'homework6/'
+- 'ising.py': Problem 1: Models Monte-Carlo Evolution of 2d Classical Ising Model and Analyzes SSB of Z_2 symmetry.
+- 'dimer.py': Problem 2: Models Evolution of 2d Dimer Model
+- 'power_spectra_rng': Problem 3: Power Spectra of Random Numbers and Random Walks
+- all relevant figures are in the folders you would think they would be in inside of 'homework 6'
