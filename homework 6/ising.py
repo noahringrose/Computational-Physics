@@ -68,7 +68,6 @@ def log_spaced_times(nsteps: int, nsnaps: int) -> np.ndarray:
     """
     if nsnaps < 2:
         return np.array([0], dtype=int)
-    # use 1..nsteps to avoid log(0), then shift back
     vals = np.logspace(0, np.log10(nsteps), nsnaps)
     ts = np.unique(np.clip(vals.astype(int) - 1, 0, nsteps - 1))
     if ts[0] != 0:

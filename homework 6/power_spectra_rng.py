@@ -2,10 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from math import log, sqrt, cos, sin, pi, exp
 
-# ============================================================
 # (a) Linear congruential generator (LCG) for U[0,1)
-# ============================================================
-
 class LCG:
     """
     LCG: X_{n+1} = (a X_n + c) mod m
@@ -93,17 +90,13 @@ def fit_loglog_slope(k, Pk, kmin=1, kmax=None):
     return slope, intercept
 
 
-# ============================================================
-# Main: generate everything asked for
-# ============================================================
 
 def main():
     # Problem specs
     N = 10_000
     seed = 123456789
 
-    # (a) Choose LCG constants (common "Numerical Recipes" / widely-used 32-bit LCG)
-    # X_{n+1} = (1664525 X_n + 1013904223) mod 2^32
+    # (a) Choose LCG constants 
     a = 1664525
     c = 1013904223
     m = 2**32
@@ -112,9 +105,7 @@ def main():
     # Generate uniforms + Gaussians
     gauss = gaussian_box_muller(lcg, N)
 
-    # ------------------------------------------------------------
     # (b) Histogram vs unit Gaussian PDF, y-axis log scale
-    # ------------------------------------------------------------
     plt.figure()
     bins = 80
     counts, edges, _ = plt.hist(gauss, bins=bins, density=True, alpha=0.6, label="Generated (N=10,000)")
@@ -130,10 +121,7 @@ def main():
     plt.savefig("gaussian_hist_logy.png", dpi=200)
     plt.close()
 
-    # ------------------------------------------------------------
     # (c) Power spectrum of Gaussian noise
-    # Expect ~ flat spectrum (slope ~ 0 in log-log)
-    # ------------------------------------------------------------
     k_g, P_g = power_spectrum(gauss)
 
     # Avoid k=0 in log-log plotting
@@ -147,9 +135,8 @@ def main():
     plt.close()
 
     slope_g, _ = fit_loglog_slope(k_g, P_g, kmin=5, kmax=min(2000, k_g[-1]))
-    # ------------------------------------------------------------
+
     # (d) Random walk from Gaussian steps
-    # ------------------------------------------------------------
     walk = np.cumsum(gauss)
 
     plt.figure()
@@ -161,10 +148,7 @@ def main():
     plt.savefig("random_walk.png", dpi=200)
     plt.close()
 
-    # ------------------------------------------------------------
     # (e) Power spectrum of random walk
-    # Expect P(k) ~ k^{-2}
-    # ------------------------------------------------------------
     k_w, P_w = power_spectrum(walk)
 
     plt.figure()

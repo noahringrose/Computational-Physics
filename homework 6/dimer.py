@@ -1,10 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# =========================
-# Dimer covering utilities
-# =========================
-
 # Encoding for each site:
 # 0 empty
 # 1 paired to right   (partner at (i, j+1))
@@ -90,7 +86,7 @@ def anneal_dimers(L=50, nsteps=200_000, T0=5.0, tau=10_000, seed=0,
     """
     Simulated annealing for the dimer covering problem.
 
-    Moves (Newman):
+    Moves:
       i) choose adjacent sites at random
      ii) if they contain a dimer connecting them: remove with prob exp(-1/T)
     iii) if both empty: always add a dimer (energy decreases)
@@ -108,7 +104,6 @@ def anneal_dimers(L=50, nsteps=200_000, T0=5.0, tau=10_000, seed=0,
 
     trace = [] if record_trace else None
 
-    # snapshot_steps: (early_step, final_step) with final_step=None => end
     early_step = snapshot_steps[0]
     final_step = snapshot_steps[1]
 
@@ -128,7 +123,6 @@ def anneal_dimers(L=50, nsteps=200_000, T0=5.0, tau=10_000, seed=0,
             if rng.random() < np.exp(-1.0 / T):
                 remove_dimer(state, a, b)
         else:
-            # do nothing
             pass
 
         if record_trace and (t % 100 == 0):
@@ -197,10 +191,6 @@ def plot_early_vs_final(early, final, tau, outname):
     plt.close()
 
 def write_latex_table(rows, outname_tex="dimer_tau_table.tex"):
-    """
-    Write a LaTeX tabular environment you can \\input{} directly.
-    rows: list of dicts with keys: tau, steps, Nd, frac
-    """
     with open(outname_tex, "w") as f:
         f.write("\\begin{tabular}{rrrr}\n")
         f.write("\\hline\n")
@@ -213,16 +203,12 @@ def write_latex_table(rows, outname_tex="dimer_tau_table.tex"):
 
 def main():
     L = 50
-
-    # === (a) + (b): compare cooling schedules ===
-    # You can tweak these; these are a sensible spread around Newman's suggestion tau=10000.
     taus = [2000, 5000, 10000, 20000]
     nsteps = 300_000
     T0 = 5.0
 
     results = []
 
-    # Pick one "representative" tau for the early-vs-final plot (Newman suggests 10000)
     tau_show = 10000
 
     for k, tau in enumerate(taus):
@@ -241,15 +227,12 @@ def main():
                 early_state, late_state, tau=tau,
                 outname="dimer_early_vs_final_tau10000.png"
             )
-            # also save final configuration alone if you want
             plot_configuration(final_state,
                                title=f"Final configuration (tau={tau})",
                                outname="dimer_final_tau10000.png")
 
-    # Write LaTeX-ready table
     write_latex_table(results, outname_tex="dimer_tau_table.tex")
 
-    # Also print to terminal
     print("Cooling schedule comparison:")
     for r in results:
         print(f"tau={r['tau']:>5}  Nd={r['Nd']:>4}  coverage f={r['frac']:.4f}")
