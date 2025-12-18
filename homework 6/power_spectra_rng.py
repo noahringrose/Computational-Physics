@@ -169,9 +169,6 @@ def main():
 
     slope_w, _ = fit_loglog_slope(k_w, P_w, kmin=5, kmax=min(2000, k_w[-1]))
 
-    # ------------------------------------------------------------
-    # Save a tiny LaTeX-ready table of fitted slopes (optional)
-    # ------------------------------------------------------------
     with open("slope_summary.tex", "w") as f:
         f.write("\\begin{tabular}{lcc}\\hline\n")
         f.write("Signal & Expected slope & Fitted slope \\\\\\hline\n")
