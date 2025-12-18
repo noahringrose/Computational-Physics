@@ -28,10 +28,8 @@ class LCG:
         return out
 
 
-# ============================================================
-# (b) Gaussian generator using Box–Muller transform
-# ============================================================
-
+# (b) Gaussian generator 
+    
 def gaussian_box_muller(lcg: LCG, n: int):
     """
     Generate n iid N(0,1) values using Box–Muller from LCG uniforms.
@@ -56,9 +54,7 @@ def gaussian_box_muller(lcg: LCG, n: int):
     return out
 
 
-# ============================================================
 # (c,e) Power spectrum via FFT (power = |FT|^2)
-# ============================================================
 
 def power_spectrum(x):
     """
